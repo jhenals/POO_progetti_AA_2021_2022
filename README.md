@@ -18,9 +18,9 @@ Box dei polinomi
 da applicare ai due polinomi, con memorizzazione del polinomio risultato nel Check Box
 * rimozione di un polinomio dal Check Box.
 
-Tutti i comandi dovrebbero essere evocati mediante una struttura a menù che includa, almeno, 
-il menù File, il menù comandi etc. o, in alternativa, mediante un pop-up menù da attivare col 
-click destro del mouse sul componente grafico
+   Tutti i comandi dovrebbero essere evocati mediante una struttura a menù che includa, almeno, 
+   il menù File, il menù comandi etc. o, in alternativa, mediante un pop-up menù da attivare col 
+   click destro del mouse sul componente grafico
 
 
 2. Linked_List: Corso di Programmazione Orientata agli Oggetti - Progetto LinkedList<T> 
