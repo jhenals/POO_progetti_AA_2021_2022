@@ -42,14 +42,13 @@ il valore di size(). Se l’iteratore è all’inizio, previousIndex() deve rito
 3.Progetto POO - Valutazione di una espressione aritmetica intera con le priorità degli operatori della 
 matematica
    * Premessa 
-Gli operandi sono interi senza segno. Gli operatori sono +,-,*,%,^ e valgono le usuali precedenze
+   Gli operandi sono interi senza segno. Gli operatori sono +,-,*,%,^ e valgono le usuali precedenze
 della matematica, cioè: π(^)>π(*,/,%)>π(+,-). A parità di priorità, si assume l’associatività a sinistra. 
 Eventualmente, si possono usare le parentesi ( e ) per alterare le priorità intrinseche: 
 un’espressione in parentesi va sempre valutata prima
    
   * Algoritmo di valutazione 
-   
-Si usano due stack: il primo è uno stack di operandi, il secondo è uno stack di caratteri operatori. 
+  Si usano due stack: il primo è uno stack di operandi, il secondo è uno stack di caratteri operatori. 
 Quando arriva un operando, lo si inserisce in cima allo stack di operandi. Quando arriva un 
 operatore, sia esso opc (op(eratore c(orrente), si procede come segue:
 A) se opc è più prioritario dell’operatore affiorante dallo stack di operatori o tale stack è vuoto, si 
@@ -69,8 +68,7 @@ che è il risultato dell’espressione. Ogni altra situazione (stack operandi vu
 elemento) denota una situazione di espressione malformata.
    
    * Gestione parentesi tonde 
-   
-Quando si incontra una parentesi aperta ‘(‘ si invoca ricorsivamente la procedura di valutazione 
+   Quando si incontra una parentesi aperta ‘(‘ si invoca ricorsivamente la procedura di valutazione 
 (diciamola valutaEspressione()). Quando si incontra una parentesi chiusa ‘)’, si ritorna l’operando in 
 cima allo stack operandi (un solo elemento o l’espressione è malformata).
 Materialmente, il metodo valutaEspressione() potrebbe introdurre i due stack come variabili locali. 
@@ -80,12 +78,10 @@ Il metodo valutaEspressione() potrebbe ricevere come parametro uno string tokeni
 aperto sulla stringa espressione ricevuta da input
    
   *  Malformazioni 
-   
-Alcune evidenti malformazioni (es. utilizzo di operatori non ammessi) possono essere 
+  Alcune evidenti malformazioni (es. utilizzo di operatori non ammessi) possono essere 
 immediatamente identificate mediante pattern matching della stringa espressione letta da input su 
 un’espressione regolare che esprime la “corretta costituzione” (condizione necessaria) 
 dell’espressione aritmetica.
    
-   * GUI di interazione 
-   
-Il progetto dovrebbe includere la messa a punto di una GUI amichevole di interazione
+   * GUI di interazione
+   Il progetto dovrebbe includere la messa a punto di una GUI amichevole di interazione
