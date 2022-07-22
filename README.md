@@ -27,13 +27,13 @@ da applicare ai due polinomi, con memorizzazione del polinomio risultato nel Che
 Con riferimento alla gerarchia di classi sviluppate durante il corso ed appartenenti al package 
 poo.util, riguardanti la lista a doppio puntatore LinkedList<T>, che si ispira all’analoga lista 
 disponibile in java.util, si chiede quanto segue:
-1) Utilizzando esclusivamente i metodi del ListIterator<T>, implementare una variante del 
+   * Utilizzando esclusivamente i metodi del ListIterator<T>, implementare una variante del 
 metodo static sort previsto nell’interfaccia List<T>, che si basi sull’algoritmo insertion sort. 
 Si osserva che è possibile utilizzare anche i metodi nextIndex() e previousIndex() di cui al 
 punto 3.
-2) Implementare nella classe concreta LinkedList<T> tutti i metodi getFirst/getLast etc. al 
+   * Implementare nella classe concreta LinkedList<T> tutti i metodi getFirst/getLast etc. al 
 momento proposti in termini del ListIterator<T>, direttamente utilizzando i puntatori.
-3) Concretizzare i metodi int nextIndex() e int previousIndex() (al momento non utilizzabili in 
+   * Concretizzare i metodi int nextIndex() e int previousIndex() (al momento non utilizzabili in 
 quanto sollevano un’eccezione del tipo UnsupportedOperationException) che ritornano 
 rispettivamente l’indice dell’elemento che verrebbe restituito da una chiamata a next() o a 
 previous(). Se l’iteratore è alla fine della lista (posizione size()), nextIndex() deve ritornare 
@@ -45,8 +45,9 @@ Premessa
 Gli operandi sono interi senza segno. Gli operatori sono +,-,*,%,^ e valgono le usuali precedenze
 della matematica, cioè: π(^)>π(*,/,%)>π(+,-). A parità di priorità, si assume l’associatività a sinistra. 
 Eventualmente, si possono usare le parentesi ( e ) per alterare le priorità intrinseche: 
-un’espressione in parentesi va sempre valutata prima.
-Algoritmo di valutazione 
+un’espressione in parentesi va sempre valutata prima
+   
+   Algoritmo di valutazione 
 Si usano due stack: il primo è uno stack di operandi, il secondo è uno stack di caratteri operatori. 
 Quando arriva un operando, lo si inserisce in cima allo stack di operandi. Quando arriva un 
 operatore, sia esso opc (op(eratore c(orrente), si procede come segue:
@@ -65,7 +66,8 @@ spiegato al punto B), inserendo ogni volta il risultato in cima allo stack opera
 Quando lo stack operatori è vuoto, allora lo stack operandi dovrebbe contenere un solo elemento 
 che è il risultato dell’espressione. Ogni altra situazione (stack operandi vuoto o con più di un 
 elemento) denota una situazione di espressione malformata.
-Gestione parentesi tonde 
+   
+   Gestione parentesi tonde 
 Quando si incontra una parentesi aperta ‘(‘ si invoca ricorsivamente la procedura di valutazione 
 (diciamola valutaEspressione()). Quando si incontra una parentesi chiusa ‘)’, si ritorna l’operando in 
 cima allo stack operandi (un solo elemento o l’espressione è malformata).
@@ -73,11 +75,13 @@ Materialmente, il metodo valutaEspressione() potrebbe introdurre i due stack com
 Al termine di valutaEspressione(), il metodo ritorna l’unico elemento (o la sotto espressione è 
 malformata) in cima allo stack operandi locale.
 Il metodo valutaEspressione() potrebbe ricevere come parametro uno string tokenizer inizialmente 
-aperto sulla stringa espressione ricevuta da input.
-Malformazioni 
+aperto sulla stringa espressione ricevuta da input
+   
+   Malformazioni 
 Alcune evidenti malformazioni (es. utilizzo di operatori non ammessi) possono essere 
 immediatamente identificate mediante pattern matching della stringa espressione letta da input su 
 un’espressione regolare che esprime la “corretta costituzione” (condizione necessaria) 
 dell’espressione aritmetica.
-GUI di interazione 
+   
+   GUI di interazione 
 Il progetto dovrebbe includere la messa a punto di una GUI amichevole di interazione
